@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@font-face {
+  font-family: rye;
+  src: url(../fonts/Rye/Rye-Regular.ttf);
+}
+
+:root {
+  /* Farver */
+  ---background-color: #1e1e1e;
+  ---green-100: #00ff29;
+  ---pink-100: #ff00a5;
+  ---blue-60: #023dff;
+  ---text-color: white;
+
+  /* Skriftstørrelser */
+  --font-size-h1-mobile: 2.14rem;
+  --font-size-h1-desktop: 2.25rem;
+
+  --font-size-h2-mobile: 1.5rem;
+  --font-size-h2-desktop: 1.56rem;
+
+  --font-size-h3-mobile: 1.29rem;
+  --font-size-h3-desktop: 1.25rem;
+
+  --font-size-p: 1rem;
+  --font-size-p-small: 0.8rem;
+}
+
+body {
+  background-color: var(---background-color);
+  font-family: inter;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: var(---text-color);
+}
+
+p {
+  line-height: 1.4rem;
+}

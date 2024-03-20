@@ -1,0 +1,39 @@
+---
+import "../styles/generel.css";
+const { variant } = Astro.props;
+---
+
+<button class={variant + " "}>
+  <slot />
+</button>
+
+<style>
+  button {
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    font-size: var(---font-size-p);
+    appearance: none;
+    border: solid 1px var(---text-color);
+    cursor: pointer;
+    display: block;
+  }
+
+  .primary {
+    background-color: transparent;
+    color: var(---text-color);
+  }
+
+  .primary:hover,
+  .secondary:hover {
+    background-color: var(---green-100);
+    color: var(---background-color);
+    border-color: var(---background-color);
+    transition: 0.3s;
+  }
+
+  .secondary {
+    border: solid 2px var(---green-100);
+    background-color: transparent;
+    color: var(---green-100);
+  }
+</style>

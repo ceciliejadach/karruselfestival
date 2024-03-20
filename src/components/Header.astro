@@ -1,0 +1,31 @@
+---
+import Burger from "../components/Burger.astro";
+---
+
+<nav class="nav_container">
+  <div class="logo_date_wrapper">
+    <img src="/public/img/logo.png" alt="karrusel logo" />
+    <p>22. - 24. august</p>
+  </div>
+  <Burger />
+</nav>
+
+<style>
+  .nav_container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo_date_wrapper {
+    display: flex;
+  }
+
+  .logo_date_wrapper p {
+    align-self: center;
+    padding-left: 20px;
+  }
+
+  .logo_date_wrapper img {
+    width: 100px;
+    filter: contrast(5%);
+  }
+</style>
