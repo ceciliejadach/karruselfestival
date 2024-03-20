@@ -1,0 +1,54 @@
+---
+import "../styles/generel.css";
+import Header from "../components/Header.astro";
+const { title } = Astro.props;
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <script src="https://kit.fontawesome.com/402d54e454.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <title>{title}</title></head
+  >
+
+  <body class="background_container">
+    <Header />
+    <main>
+      <h1>{title}</h1>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .background_container {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, var(---green-100), var(---pink-100), var(---background-color), var(---blue-60));
+    background-size: 200% 200%;
+    animation: color 12s ease-in-out infinite;
+  }
+
+  @keyframes color {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+</style>

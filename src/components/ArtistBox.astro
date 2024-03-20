@@ -1,0 +1,10 @@
+---
+const { data } = Astro.props;
+---
+
+<a href={`singleview/${data.slug}`}>
+  <article>
+    <h2>{data.name}</h2>
+    <p>{data.land}</p>
+  </article>
+</a>

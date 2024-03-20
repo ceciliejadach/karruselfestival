@@ -1,0 +1,20 @@
+---
+export async function getStaticPaths() {
+  const data = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvdXp0a3lwdXZhZGl4c3p6dm1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDk2NDgsImV4cCI6MjAyNTk4NTY0OH0.oMKp-E0V7IIEqcgHIkiLPHgJ0ErGic-JPce1db7I5js",
+    },
+  }).then((response) => response.json());
+
+  return data.map((artist) => {
+    return {
+      params: { slug: artist.slug },
+      props: { myData: artist },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---

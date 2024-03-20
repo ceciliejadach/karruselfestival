@@ -1,18 +1,24 @@
 ---
 import "../styles/generel.css";
-import Header from "../components/Header.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import ArtistBox from "../components/ArtistBox.astro";
+
+const data = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvdXp0a3lwdXZhZGl4c3p6dm1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDk2NDgsImV4cCI6MjAyNTk4NTY0OH0.oMKp-E0V7IIEqcgHIkiLPHgJ0ErGic-JPce1db7I5js",
+  },
+}).then((res) => res.json());
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Header />
-    <h1>Astro</h1>
-  </body>
-</html>
+<MainLayout>
+  <h1>Home page</h1>
+  <section class="artist">
+    {
+      data.map((artist) => {
+        return <ArtistBox data={artist} />;
+      })
+    }
+    <ArtistBox />
+  </section>
+</MainLayout>

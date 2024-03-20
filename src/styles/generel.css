@@ -39,10 +39,9 @@ video {
 }
 
 body {
-  background-color: var(---background-color);
+  /* background-color: var(---background-color); */
   font-family: inter;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 h1,
@@ -50,6 +49,11 @@ h2,
 h3,
 p {
   color: var(---text-color);
+}
+
+h1 {
+  font-family: rye;
+  margin-top: 100px;
 }
 
 p {

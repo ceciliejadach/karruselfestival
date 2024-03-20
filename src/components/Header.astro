@@ -4,7 +4,7 @@ import Burger from "../components/Burger.astro";
 
 <nav class="nav_container">
   <div class="logo_date_wrapper">
-    <img src="/public/img/logo.png" alt="karrusel logo" />
+    <a href="/"><img src="/public/img/logo.png" alt="karrusel logo" /></a>
     <p>22. - 24. august</p>
   </div>
   <Burger />
@@ -17,6 +17,8 @@ import Burger from "../components/Burger.astro";
   }
   .logo_date_wrapper {
     display: flex;
+    position: absolute;
+    top: 1%;
   }
 
   .logo_date_wrapper p {
